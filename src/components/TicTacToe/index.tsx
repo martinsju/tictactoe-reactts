@@ -1,6 +1,7 @@
 import Board from 'components/Board'
 import Square from 'components/Square'
-import React from 'react'
+import React, { useState } from 'react'
+import * as C from './styled'
 
 const TicTacToe: React.FC = function () {
 	// const squarePositions = [
@@ -9,12 +10,77 @@ const TicTacToe: React.FC = function () {
 	//    "6", "7", "8"]
 	// ]
 
+	const [isToggle, setToggle] = useState(true)
+	const turn = isToggle ? 'X' : 'O'
+
 	return (
-		<Board>
-			<Square />
-			<Square />
-			<Square />
-		</Board>
+		<C.Container>
+			<h1>Tic Tac Toe Game</h1>
+			<h3>Turn: {turn}</h3>
+
+			<C.Board>
+				<C.Row>
+					<Square
+						id='0'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+					<Square
+						id='1'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+					<Square
+						id='2'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+				</C.Row>
+				<C.Row>
+					<Square
+						id='3'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+					<Square
+						id='4'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+					<Square
+						id='5'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+				</C.Row>
+				<C.Row>
+					<Square
+						id='6'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+					<Square
+						id='7'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+					<Square
+						id='8'
+						turn={turn}
+						isToggle={isToggle}
+						setToggle={setToggle}
+					/>
+				</C.Row>
+			</C.Board>
+		</C.Container>
 	)
 }
 
